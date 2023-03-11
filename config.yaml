@@ -1,0 +1,12 @@
+server:
+  host: 127.0.0.1
+  port: 5000
+  timeout:
+    server: 30
+
+mysql:
+  host: 127.0.0.1
+  port: 5000
+  usename: user
+  password: password
+  
