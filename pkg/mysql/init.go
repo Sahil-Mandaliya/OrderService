@@ -52,7 +52,6 @@ func getMySQLConnectionString() string {
 func InitDB(params ...string) *gorm.DB {
 	var err error
 	conString := getMySQLConnectionString()
-	log.Print(conString)
 
 	DB, err = gorm.Open("mysql", conString)
 
