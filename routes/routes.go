@@ -5,30 +5,27 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
-
-	orderCtr "github.com/Sahil-Mandaliya/OrderService/controller/order"
-	userCtr "github.com/Sahil-Mandaliya/OrderService/controller/user"
 )
 
 func Routers() {
 	router := mux.NewRouter()
-	router.HandleFunc("/users",
-		userCtr.GetUsers).Methods("GET")
-	router.HandleFunc("/user",
-		userCtr.GetUserById).Methods("GET")
-	router.HandleFunc("/orders",
-		orderCtr.GetOrders).Methods("GET")
-	router.HandleFunc("/users",
-		userCtr.CreateUser).Methods("POST")
-	router.HandleFunc("/order",
-		orderCtr.CreateOrder).Methods("POST")
-	router.HandleFunc("/order",
-		orderCtr.GetOrder).Methods("GET")
-	// ?order_id={id}
-	router.HandleFunc("/order/update",
-		orderCtr.UpdateOrder).Methods("PUT")
-	router.HandleFunc("/order/delete",
-		orderCtr.DeleteOrder).Methods("DELETE")
+	// router.HandleFunc("/users",
+	// 	userCtr.GetUsers).Methods("GET")
+	// router.HandleFunc("/user",
+	// 	userCtr.GetUserById).Methods("GET")
+	// router.HandleFunc("/orders",
+	// 	orderCtr.GetOrders).Methods("GET")
+	// router.HandleFunc("/users",
+	// 	userCtr.CreateUser).Methods("POST")
+	// router.HandleFunc("/order",
+	// 	orderCtr.CreateOrder).Methods("POST")
+	// router.HandleFunc("/order",
+	// 	orderCtr.GetOrder).Methods("GET")
+	// // ?order_id={id}
+	// router.HandleFunc("/order/update",
+	// 	orderCtr.UpdateOrder).Methods("PUT")
+	// router.HandleFunc("/order/delete",
+	// 	orderCtr.DeleteOrder).Methods("DELETE")
 
 	// router.HandleFunc("/users/{id}",
 	// 	userModel.GetUser).Methods("GET")

@@ -3,6 +3,7 @@ package order
 import (
 	"context"
 
+	orderCtr "github.com/Sahil-Mandaliya/OrderService/controller/order"
 	orderpb "github.com/Sahil-Mandaliya/OrderService/proto/order"
 )
 
@@ -11,18 +12,23 @@ type OrderService struct {
 }
 
 func (rpc OrderService) GetAllOrders(ctx context.Context, req *orderpb.GetAllOrdersRequest) (*orderpb.GetAllOrdersResponse, error) {
-	orders := make([]*orderpb.Order, 0)
+	orders, err := orderCtr.GetOrders(ctx)
+	if err != nil {
+		return nil, err
+	}
 	res := &orderpb.GetAllOrdersResponse{
-		Orders: &orderpb.Orders{
-			Order: orders,
-		},
+		Orders: orderCtr.OrdersModelToPb(orders),
 	}
 	return res, nil
 }
 
 func (rpc OrderService) GetOrderById(ctx context.Context, req *orderpb.GetOrderByIdRequest) (*orderpb.GetOrderByIdResponse, error) {
+	order, err := orderCtr.GetOrder(ctx, req.GetOrderId())
+	if err != nil {
+		return nil, err
+	}
 	res := &orderpb.GetOrderByIdResponse{
-		Order: &orderpb.Order{},
+		Order: orderCtr.OrderModelToPb(order),
 	}
 	return res, nil
 }
