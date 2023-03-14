@@ -11,9 +11,9 @@ import (
 	routes "github.com/Sahil-Mandaliya/OrderService/routes"
 	"google.golang.org/grpc"
 
-	orderSvc "github.com/Sahil-Mandaliya/OrderService/Service/order"
 	mysqlDb "github.com/Sahil-Mandaliya/OrderService/pkg/mysql"
 	orderpb "github.com/Sahil-Mandaliya/OrderService/proto/order"
+	orderSvc "github.com/Sahil-Mandaliya/OrderService/service/order"
 
 	_ "github.com/go-sql-driver/mysql"
 )
