@@ -6,7 +6,7 @@ env:
 phases:
   install:
     commands:
-      - make up
+      # - make up
   pre_build:
     commands:
       - echo Start pre_build...
