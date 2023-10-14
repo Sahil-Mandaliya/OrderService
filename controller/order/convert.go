@@ -1,20 +1,20 @@
 package order
 
 import (
+	"fmt"
+
 	orderModel "github.com/Sahil-Mandaliya/OrderService/models/order"
+	"github.com/Sahil-Mandaliya/OrderService/pkg/json"
 	"github.com/Sahil-Mandaliya/OrderService/pkg/util"
 	orderpb "github.com/Sahil-Mandaliya/OrderService/proto/order"
 )
 
-func OrdersModelToPb(orders []*orderModel.Order) *orderpb.Orders {
+func OrdersModelToPb(orders []*orderModel.Order) []*orderpb.Order {
 	ordersPb := make([]*orderpb.Order, 0)
 	for _, order := range orders {
 		ordersPb = append(ordersPb, OrderModelToPb(order))
 	}
-	res := &orderpb.Orders{
-		Orders: ordersPb,
-	}
-	return res
+	return ordersPb
 }
 
 func OrderModelToPb(order *orderModel.Order) *orderpb.Order {
