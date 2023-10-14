@@ -21,7 +21,7 @@ message GetAllOrdersRequest {
 }
 
 message GetAllOrdersResponse {
-	Orders orders = 1;
+	repeated Order orders = 1;
 	common.Error error = 2;
 }
 

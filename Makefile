@@ -7,7 +7,6 @@ build:
 
 up:
 	docker-compose up -d
-	migrate create -ext sql -dir deployment/migrations -seq init_schema
 
 dev:
 	go get -u google.golang.org/grpc
