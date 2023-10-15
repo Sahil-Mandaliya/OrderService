@@ -2,6 +2,7 @@ package user
 
 import (
 	"context"
+	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
 
@@ -13,11 +14,11 @@ import (
 /***************************************************/
 
 type User struct {
-	ID           string `json:"id"`
+	ID           uint64 `json:"id"`
 	FirstName    string `json:"firstName"`
 	LastName     string `json:"lastName"`
 	Email        string `json:"email"`
-	MobileNumber uint64 `json:"mobileNumber"`
+	MobileNumber string `json:"mobileNumber"`
 	Address      string `json:"address"`
 }
 
@@ -44,13 +45,13 @@ func GetUserById(ctx context.Context, userId uint64) (*User, error) {
 }
 
 // Create user
-func CreateUser(ctx context.Context, user *User) error {
+func CreateUser(ctx context.Context, user *User) (*User,error) {
 	db := mysqlDb.DBConnection()
 	gormObj := db.Create(user)
 	if gormObj.Error != nil {
-		return gormObj.Error
+		return nil, gormObj.Error
 	}
-	return nil
+	return user, nil
 }
 
 // Get user by ID

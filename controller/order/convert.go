@@ -1,10 +1,8 @@
 package order
 
 import (
-	"fmt"
 
 	orderModel "github.com/Sahil-Mandaliya/OrderService/models/order"
-	"github.com/Sahil-Mandaliya/OrderService/pkg/json"
 	"github.com/Sahil-Mandaliya/OrderService/pkg/util"
 	orderpb "github.com/Sahil-Mandaliya/OrderService/proto/order"
 )
