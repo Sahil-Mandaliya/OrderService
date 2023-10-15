@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/Sahil-Mandaliya/OrderService/proto/user";
+
+import "proto/user/user.proto";
+
+service OrderService {
+	rpc GetAllUsers (GetAllUsersRequest) returns (GetAllUsersResponse);
+    rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
+}
