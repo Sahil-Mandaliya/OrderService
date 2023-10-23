@@ -5,6 +5,6 @@ package common;
 option go_package = "github.com/Sahil-Mandaliya/OrderService/proto/common";
 
 message Error {
-	string code = 1;
-	string message = 2;
+  string code = 1;
+  string message = 2;
 }

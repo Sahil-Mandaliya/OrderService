@@ -2,36 +2,36 @@ syntax = "proto3";
 
 package user;
 
-option go_package = "github.com/Sahil-Mandaliya/OrderService/proto/user";
-
 import "proto/common/common.proto";
 
+option go_package = "github.com/Sahil-Mandaliya/OrderService/proto/user";
+
 message Users {
-    repeated User users = 1;
+  repeated User users = 1;
 }
 
 message User {
-    uint64 user_id = 1;
-    string first_name = 2;
-    string last_name = 3;
-    string email = 4;
-    string mobile_number = 5;
-    string address = 6;
+  uint64 user_id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string email = 4;
+  string mobile_number = 5;
+  string address = 6;
 }
 
 message GetAllUsersRequest {
 }
 
 message GetAllUsersResponse {
-	repeated User users = 1;
-	common.Error error = 2;
+  repeated User users = 1;
+  common.Error error = 2;
 }
 
 message CreateUserRequest {
-    User user = 1;
+  User user = 1;
 }
 
 message CreateUserResponse {
-	User user = 1;
-    common.Error error = 2;
+  User user = 1;
+  common.Error error = 2;
 }

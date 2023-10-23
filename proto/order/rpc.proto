@@ -2,11 +2,11 @@ syntax = "proto3";
 
 package order;
 
-option go_package = "github.com/Sahil-Mandaliya/OrderService/proto/order";
-
 import "proto/order/order.proto";
 
+option go_package = "github.com/Sahil-Mandaliya/OrderService/proto/order";
+
 service OrderService {
-	rpc GetAllOrders (GetAllOrdersRequest) returns (GetAllOrdersResponse);
-    rpc GetOrderById (GetOrderByIdRequest) returns (GetOrderByIdResponse);
+  rpc GetAllOrders (GetAllOrdersRequest) returns (GetAllOrdersResponse);
+  rpc GetOrderById (GetOrderByIdRequest) returns (GetOrderByIdResponse);
 }
